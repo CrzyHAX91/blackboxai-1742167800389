@@ -1,0 +1,25 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+
+Sitemap: https://badbeatstools.com/sitemap.xml
+
+# Allow crawling of static assets
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Allow: /icons/
+
+# Prevent crawling of user-specific content
+Disallow: /users/*/private
+Disallow: /profile/settings
+Disallow: /account/billing
+
+# Rate limiting
+Crawl-delay: 10
+
+# Block specific bots
+User-agent: BadBot
+Disallow: /
