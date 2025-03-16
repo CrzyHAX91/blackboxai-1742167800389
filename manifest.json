@@ -1,0 +1,51 @@
+{
+    "name": "BadbeatsTools",
+    "short_name": "BadbeatsTools",
+    "description": "Upload, share, and promote your music worldwide",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#111827",
+    "theme_color": "#ef4444",
+    "icons": [
+        {
+            "src": "/icons/placeholder.svg",
+            "sizes": "72x72 96x96 128x128 144x144 152x152 192x192 384x384 512x512",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        }
+    ],
+    "shortcuts": [
+        {
+            "name": "Upload Track",
+            "short_name": "Upload",
+            "description": "Upload a new track",
+            "url": "/?action=upload",
+            "icons": [{ "src": "/icons/upload-96x96.png", "sizes": "96x96" }]
+        },
+        {
+            "name": "My Profile",
+            "short_name": "Profile",
+            "description": "View your profile",
+            "url": "/profile",
+            "icons": [{ "src": "/icons/profile-96x96.png", "sizes": "96x96" }]
+        }
+    ],
+    "related_applications": [],
+    "prefer_related_applications": false,
+    "screenshots": [
+        {
+            "src": "/screenshots/home.png",
+            "sizes": "1280x720",
+            "type": "image/png",
+            "platform": "wide",
+            "label": "Home screen of BadbeatsTools"
+        },
+        {
+            "src": "/screenshots/player.png",
+            "sizes": "1280x720",
+            "type": "image/png",
+            "platform": "wide",
+            "label": "Music player interface"
+        }
+    ]
+}
