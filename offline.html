@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline - BadbeatsTools</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500;600&family=Audiowide&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827;
+            color: white;
+        }
+        .font-audiowide {
+            font-family: 'Audiowide', cursive;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+    <nav class="bg-gray-900 border-b border-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <a href="/" class="flex items-center space-x-2">
+                    <span class="text-2xl font-audiowide text-red-500">BadbeatsTools</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow flex items-center justify-center p-4">
+        <div class="text-center">
+            <div class="mb-8">
+                <i class="fas fa-wifi-slash text-6xl text-gray-600 mb-4"></i>
+                <h1 class="text-4xl font-bold mb-4">You're Offline</h1>
+                <p class="text-gray-400 text-lg mb-8">Please check your internet connection and try again</p>
+            </div>
+            
+            <div class="space-y-4">
+                <button onclick="window.location.reload()" 
+                    class="bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-lg transition-colors inline-flex items-center">
+                    <i class="fas fa-sync-alt mr-2"></i>
+                    Retry Connection
+                </button>
+                
+                <div>
+                    <a href="/" class="text-red-500 hover:text-red-400 inline-flex items-center">
+                        <i class="fas fa-home mr-2"></i>
+                        Return to Homepage
+                    </a>
+                </div>
+            </div>
+
+            <div class="mt-12 text-sm text-gray-500">
+                <p>Some features may be available offline</p>
+                <p>Your cached tracks and data will be synced when you're back online</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-900 border-t border-gray-800 py-4">
+        <div class="container mx-auto px-4 text-center text-gray-500">
+            <p>&copy; 2025 BadbeatsTools. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Check connection status
+        window.addEventListener('online', function() {
+            window.location.reload();
+        });
+
+        // Add to cache for offline access
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js');
+        }
+    </script>
+</body>
+</html>
